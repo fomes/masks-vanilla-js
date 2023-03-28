@@ -90,3 +90,24 @@ document.querySelectorAll('input').forEach($input => {
     e.target.value = masks[field](e.target.value)
   }, false)
 })
+
+// separados com espaço
+export const cardMask = (value: any) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{4})(\d)/, "$1 $2")
+    .replace(/(\d{4})(\d)/, "$1 $2")
+    .replace(/(\d{4})(\d)/, "$1 $2")
+    .replace(/(\d{4})\d+?$/, "$1");
+};
+
+// separados com traço
+export const cardMask = (value: any) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{4})(\d)/, "$1-$2")
+    .replace(/(\d{4})(\d)/, "$1-$2")
+    .replace(/(\d{4})(\d)/, "$1-$2")
+    .replace(/(-\d{4})\d+?$/, "$1");
+};
+
